@@ -4,10 +4,11 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 WindowEXE := "Window exe name"
-ProgramPath := "Program path"
+ProgramDirectory := "Program path"
+ProgramEXE := "Program exe"
 
 If WinExist("ahk_exe " . WindowEXE)
 	WinActivate
 else
-	Run, ProgramPath
+	Run, %ProgramDirectory%\%ProgramEXE% %ProgramDirectory%
 return
